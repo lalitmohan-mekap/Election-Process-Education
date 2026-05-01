@@ -10,7 +10,7 @@ import {
 } from "lucide-react";
 import { infographicsData, type InfographicCard } from "../data/infographicsData";
 
-function InfographicCardView({
+const InfographicCardView = React.memo(function InfographicCardView({
   card,
   cardRef,
 }: {
@@ -65,8 +65,18 @@ function InfographicCardView({
       </div>
     </div>
   );
-}
+});
 
+/**
+ * Infographics component renders a carousel of shareable data cards.
+ * Users can scroll through facts, download them as images, or share them.
+ *
+ * @component
+ * @example
+ * return (
+ *   <Infographics />
+ * )
+ */
 export default function Infographics() {
   const scrollRef = useRef<HTMLDivElement>(null);
   const captureRef = useRef<HTMLDivElement>(null);

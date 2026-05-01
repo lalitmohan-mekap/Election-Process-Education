@@ -1,5 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
+import { getPerformance } from "firebase/performance";
 
 const firebaseConfig = {
   apiKey: "AIzaSyBOegHueLSZT9FZd7gcLcapuuBz3peIbHs",
@@ -13,6 +14,8 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+
 export const analytics = typeof window !== 'undefined' ? getAnalytics(app) : null;
+export const performance = typeof window !== 'undefined' ? getPerformance(app) : null;
 
 export default app;

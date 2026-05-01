@@ -11,7 +11,7 @@ import {
 import { votingGuides, type VotingGuide } from "../data/votingGuidesData";
 import { cn } from "../lib/utils";
 
-function Badge({
+const Badge = React.memo(function Badge({
   children,
   variant = "default",
 }: {
@@ -30,8 +30,18 @@ function Badge({
       {children}
     </span>
   );
-}
+});
 
+/**
+ * HowToVote component provides a tailored, step-by-step voting guide
+ * based on the user's selected country.
+ *
+ * @component
+ * @example
+ * return (
+ *   <HowToVote />
+ * )
+ */
 export default function HowToVote() {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCountry, setSelectedCountry] = useState<string | null>(null);
@@ -137,6 +147,7 @@ export default function HowToVote() {
                         setSearchQuery("");
                       }}
                       className="absolute right-2 top-1/2 -translate-y-1/2"
+                      aria-label="Clear search"
                     >
                       <X className="w-3.5 h-3.5 text-slate-400" />
                     </button>

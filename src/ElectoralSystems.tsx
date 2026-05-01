@@ -85,11 +85,27 @@ const electoralSystems: ElectoralSystem[] = [
   },
 ];
 
+/**
+ * Properties for the ElectoralSystems component.
+ */
 interface ElectoralSystemsComponentProps {
+  /** Array of electoral systems to display. Defaults to predefined list. */
   systems?: ElectoralSystem[];
+  /** The ID of the electoral system to show by default. */
   defaultSystem?: string;
 }
 
+/**
+ * ElectoralSystems component explains different voting mechanisms
+ * used around the world, highlighting their advantages and disadvantages.
+ *
+ * @component
+ * @param {ElectoralSystemsComponentProps} props - Component properties
+ * @example
+ * return (
+ *   <ElectoralSystems defaultSystem="fptp" />
+ * )
+ */
 export default function ElectoralSystems({
   systems = electoralSystems,
   defaultSystem = "fptp",

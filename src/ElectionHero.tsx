@@ -88,13 +88,28 @@ interface Dot {
 
 // ── Fix #8: Smooth-scroll helper ──────────────────────────────────────────────
 
+/**
+ * Smoothly scrolls the window to the specified element ID.
+ * @param {string} id - The ID of the HTML element to scroll to.
+ */
 function scrollToSection(id: string) {
   document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
 }
 
 // ── Component ─────────────────────────────────────────────────────────────────
 
-const ElectionHero: React.FC = () => {
+/**
+ * ElectionHero component renders the landing page hero section.
+ * It features a highly interactive, performance-optimized canvas particle background
+ * and animated typography to grab user attention.
+ *
+ * @component
+ * @example
+ * return (
+ *   <ElectionHero />
+ * )
+ */
+const ElectionHero: React.FC = React.memo(() => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const animationFrameId = useRef<number | null>(null);
   const dotsRef = useRef<Dot[]>([]);

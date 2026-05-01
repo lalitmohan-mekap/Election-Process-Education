@@ -33,6 +33,14 @@ const NAV_LINKS = [
   { href: "#facts", label: "Facts" },
 ];
 
+/**
+ * Mobile navigation menu overlay component.
+ *
+ * @component
+ * @param {Object} props - Component properties
+ * @param {boolean} props.isOpen - Whether the menu is currently visible
+ * @param {() => void} props.onClose - Callback function to close the menu
+ */
 function MobileMenu({
   isOpen,
   onClose,
@@ -73,6 +81,16 @@ function MobileMenu({
   );
 }
 
+/**
+ * Main application component.
+ * Orchestrates the rendering of the landing page, navigation, and lazy-loaded feature components.
+ *
+ * @component
+ * @example
+ * return (
+ *   <App />
+ * )
+ */
 function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
