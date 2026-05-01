@@ -497,6 +497,6 @@ const ElectionHero: React.FC = React.memo(() => {
       </div>
     </div>
   );
-};
+});
 
 export default ElectionHero;
