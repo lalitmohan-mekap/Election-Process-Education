@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { render, screen, fireEvent } from '@testing-library/react';
 import { expect, test, describe } from 'vitest';
 import Infographics from './Infographics';

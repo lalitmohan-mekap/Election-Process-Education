@@ -12,7 +12,6 @@ import {
   type Transition,
   type VariantLabels,
   type Target,
-  type AnimationControls,
   type TargetAndTransition,
 } from "framer-motion";
 import { cn, splitIntoCharacters } from "../../lib/utils";
@@ -32,7 +31,7 @@ interface RotatingTextProps
   texts: string[];
   transition?: Transition;
   initial?: boolean | Target | VariantLabels;
-  animate?: boolean | VariantLabels | AnimationControls | TargetAndTransition;
+  animate?: boolean | VariantLabels | TargetAndTransition;
   exit?: Target | VariantLabels;
   animatePresenceMode?: "sync" | "wait";
   animatePresenceInitial?: boolean;

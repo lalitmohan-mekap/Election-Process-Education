@@ -20,12 +20,10 @@ const systemTypes: ElectoralSystemType[] = [
 
 // Perf: memoize to prevent re-renders when sibling cards change
 const CountryCard = React.memo(function CountryCard({
-  code,
   data,
   isActive,
   onClick,
 }: {
-  code: string;
   data: CountryData;
   isActive: boolean;
   onClick: () => void;
@@ -199,7 +197,6 @@ export default function WorldElectionMap() {
           {countries.map(([code, data]) => (
             <CountryCard
               key={code}
-              code={code}
               data={data}
               isActive={selectedCountry === code}
               onClick={() =>

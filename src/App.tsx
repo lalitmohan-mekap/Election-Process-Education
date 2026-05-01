@@ -1,4 +1,4 @@
-import React, { useState, Suspense, lazy } from "react";
+import { useState, Suspense, lazy } from "react";
 import {
   BookOpen,
   Globe2,
