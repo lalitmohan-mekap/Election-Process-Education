@@ -1,5 +1,7 @@
 # 🗳️ DemocracyEdu — Election Process Education Platform
 
+**🌍 Live at:** [https://lalitmohan-mekap.github.io/Election-Process-Education/](https://lalitmohan-mekap.github.io/Election-Process-Education/)
+
 A modern, interactive web application that teaches citizens how elections work around the world. Built with **React 19**, **TypeScript**, **Framer Motion**, and **Tailwind CSS**, the platform combines rich animations, real-world data, and mobile-first responsive design to make civic education engaging and accessible.
 
 
