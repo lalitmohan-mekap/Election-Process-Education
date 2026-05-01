@@ -12,10 +12,21 @@ const firebaseConfig = {
   measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID
 };
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
+// Initialize Firebase safely (prevents crashing if env vars are missing)
+let app = null;
+export let analytics = null;
+export let performance = null;
 
-export const analytics = typeof window !== 'undefined' ? getAnalytics(app) : null;
-export const performance = typeof window !== 'undefined' ? getPerformance(app) : null;
+if (firebaseConfig.apiKey && firebaseConfig.apiKey !== 'your_api_key_here') {
+  try {
+    app = initializeApp(firebaseConfig);
+    if (typeof window !== 'undefined') {
+      analytics = getAnalytics(app);
+      performance = getPerformance(app);
+    }
+  } catch (error) {
+    console.error("Firebase initialization error", error);
+  }
+}
 
 export default app;
