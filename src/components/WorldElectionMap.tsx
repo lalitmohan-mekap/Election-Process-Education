@@ -74,6 +74,17 @@ function TurnoutBar({ value }: { value: number }) {
   );
 }
 
+/**
+ * WorldElectionMap component provides an interactive visualization of electoral
+ * systems around the globe. It allows users to filter by system type, search for
+ * specific countries, and view detailed metrics like voter turnout.
+ * 
+ * @component
+ * @example
+ * return (
+ *   <WorldElectionMap />
+ * )
+ */
 export default function WorldElectionMap() {
   const [searchQuery, setSearchQuery] = useState("");
   const [filterSystem, setFilterSystem] = useState<

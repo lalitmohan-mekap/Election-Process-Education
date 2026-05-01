@@ -77,6 +77,17 @@ const TimelineStepCard = React.memo(function TimelineStepCard({
   );
 });
 
+/**
+ * ElectionTimeline component displays the standard lifecycle of an election.
+ * It iterates through predefined steps, rendering them as interactive cards
+ * that expand to show more detailed information about each phase.
+ * 
+ * @component
+ * @example
+ * return (
+ *   <ElectionTimeline />
+ * )
+ */
 export default function ElectionTimeline() {
   return (
     <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
